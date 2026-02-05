@@ -1,3 +1,5 @@
+
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './auth.css',
 })
 export class Auth {
+  
+  req:boolean=false
+  btnclickreg(){
+    this.req=true
+  }
 
+  btnclicklog(){
+        this.req=false
+
+  }
 }
