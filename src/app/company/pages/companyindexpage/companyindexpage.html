@@ -1,3 +1,95 @@
 <app-header></app-header>
-<p>companyindexpage works!</p>
+
+<div class="container-fluid mt-4">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h4 class="fw-bold mb-1">Dashboard Overview</h4>
+      <p class="text-muted small mb-0">
+        Track your recruitment pipeline performance and active listings.
+      </p>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-light border">
+        <i class="bi bi-download me-1"></i> Export Report
+      </button>
+      <button class="btn btn-primary">
+        <i class="bi bi-plus-lg me-1"></i> Post a Job
+      </button>
+    </div>
+  </div>
+
+  <!-- STATS CARDS -->
+  <div class="row g-4">
+
+    <!-- Active Jobs -->
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4 p-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="icon-box bg-primary-subtle text-primary">
+            <i class="bi bi-briefcase-fill"></i>
+          </div>
+          <span class="badge bg-success-subtle text-success">+2%</span>
+        </div>
+        <p class="text-muted small mt-3 mb-1">Active Jobs</p>
+        <h4 class="fw-bold">12</h4>
+      </div>
+    </div>
+
+    <!-- Total Applicants -->
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4 p-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="icon-box bg-purple-subtle text-purple">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <span class="badge bg-success-subtle text-success">+15%</span>
+        </div>
+        <p class="text-muted small mt-3 mb-1">Total Applicants</p>
+        <h4 class="fw-bold">1,240</h4>
+      </div>
+    </div>
+
+    <!-- Shortlisted -->
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4 p-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="icon-box bg-warning-subtle text-warning">
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <span class="badge bg-success-subtle text-success">+5%</span>
+        </div>
+        <p class="text-muted small mt-3 mb-1">Shortlisted</p>
+        <h4 class="fw-bold">320</h4>
+      </div>
+    </div>
+
+    <!-- Total Hired -->
+    <div class="col-md-3">
+      <div class="card border-0 shadow-sm rounded-4 p-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="icon-box bg-success-subtle text-success">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <span class="badge bg-success-subtle text-success">+10%</span>
+        </div>
+        <p class="text-muted small mt-3 mb-1">Total Hired</p>
+        <h4 class="fw-bold">45</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <section class="container-fluid mt-5">
+    <div class="bg-primary-subtle p-4 ">
+<h1><img src="" alt="" srcset=""></h1>
+    </div>
+
+</section> -->
+
+
+
 <app-footer></app-footer>

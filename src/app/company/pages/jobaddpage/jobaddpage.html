@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+
+      <!-- JOB DETAILS -->
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+        <h6 class="fw-bold mb-3">Job Details</h6>
+
+        <div class="mb-3">
+          <label class="form-label">Job Title</label>
+          <input type="text" class="form-control" placeholder="e.g. Senior Product Designer">
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Job Category</label>
+            <select class="form-select">
+              <option>Design</option>
+              <option>Development</option>
+              <option>Marketing</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Job Type</label>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-primary active">Full-time</button>
+              <button class="btn btn-outline-secondary">Contract</button>
+              <button class="btn btn-outline-secondary">Remote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0">Description & Requirements</h6>
+          <button class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-magic"></i> Generate with AI
+          </button>
+        </div>
+
+        <label class="form-label">Job Description</label>
+        <textarea class="form-control mb-3" rows="5"
+          placeholder="Tell candidates about the role and your company..."></textarea>
+
+        <label class="form-label">Key Requirements</label>
+        <textarea class="form-control" rows="3"
+          placeholder="List the must-have skills or experiences..."></textarea>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+        <h6 class="fw-bold mb-3">Settings</h6>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Salary Range (Annual)</label>
+            <div class="d-flex gap-2">
+              <input type="number" class="form-control" placeholder="$ Min">
+              <input type="number" class="form-control" placeholder="$ Max">
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" placeholder="San Francisco, CA or Remote">
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Application Deadline</label>
+            <input type="date" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Work Setup</label>
+            <div class="d-flex gap-3 mt-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="work">
+                <label class="form-check-label">On-site</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="work">
+                <label class="form-check-label">Hybrid</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="work" checked>
+                <label class="form-check-label">Remote</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="d-flex justify-content-end gap-3">
+        <button class="btn btn-light">Cancel</button>
+        <button class="btn btn-primary px-4">Publish Job Posting</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
