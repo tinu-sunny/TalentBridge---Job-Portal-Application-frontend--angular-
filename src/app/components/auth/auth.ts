@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 import { Apiservices } from '../../../services/apiservices';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -13,8 +14,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class Auth {
 
 reqform!:FormGroup
+loginform!:FormGroup
 
-  constructor(private api:Apiservices,private fb:FormBuilder){}
+  constructor(private api:Apiservices,private fb:FormBuilder,private route:Router){}
 
   ngOnInit(){
     this.reqform= this.fb.group({
@@ -23,7 +25,15 @@ reqform!:FormGroup
       role:['',[Validators.required]],
       password:['',[Validators.required]]
     })
+
+
+    this.loginform= this.fb.group({
+      lemail:['',[Validators.required,Validators.email]],
+      lpassword:['',[Validators.required]]
+    })
   }
+
+
   
   req:boolean=false
   btnclickreg(){
@@ -63,5 +73,52 @@ requser(){
 
 
 }
+
+data:string=''
+// login 
+
+userlogin(){
+
+if(this.loginform.valid){
+  console.log(this.loginform.value.lemail);
+// password:String=this.loginform
+  this.api.loginuser(this.loginform.value.lemail).subscribe({
+    next:(res:any)=>{
+      console.log(res);
+if(res.length > 0){
+      if(res[0].password==this.loginform.value.lpassword){
+        alert("login")
+        if(res[0].role=='user'){
+ this.route.navigateByUrl('/users')
+        }
+        else{
+           this.route.navigateByUrl('/company')
+        }
+      
+      }
+      else{
+        alert('password missmatch')
+      }}
+      else{
+        alert('email is not registered')
+      }
+  
+      
+    },
+    error:(err)=>{
+      console.log(err);
+      
+    }
+  })
+
+}
+else{
+  alert('fill the form')
+}
+
+}
+
+
+// 
 
 }

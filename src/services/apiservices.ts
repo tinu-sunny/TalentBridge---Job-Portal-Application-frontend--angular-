@@ -13,4 +13,10 @@ export class Apiservices {
  adduser(data:any){
   return this.http.post(`${this.baseurl}/users`, data);
 }
+  // users?email=tinu@gmail.com
+
+
+loginuser(data:any){
+  return this.http.get(`${this.baseurl}/users?email=${data}`)
+}
 }

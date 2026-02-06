@@ -2,52 +2,60 @@
     <div class="">
       <div class="card border-0 shadow-lg rounded-4 p-4">
 @if(!req){
-        <h5 class="fw-bold">Welcome Back</h5>
-        <p class="text-muted small">Ready to start your next chapter?</p>
-
-        <!-- Role -->
-        <div class="btn-group w-100 my-3">
-          <button class="btn btn-primary btn-sm" (click)="btnclicklog()">
-            <i class="bi bi-person-fill"></i> Login
+        <form [formGroup]="loginform">
+          <h5 class="fw-bold">Welcome Back</h5>
+          <p class="text-muted small">Ready to start your next chapter?</p>
+  
+          <!-- Role -->
+          <div class="btn-group w-100 my-3">
+            <button class="btn btn-primary btn-sm" (click)="btnclicklog()">
+              <i class="bi bi-person-fill"></i> Login
+            </button>
+            <button class="btn btn-light btn-sm" (click)="btnclickreg()">
+              <i class="bi bi-briefcase"></i> Register
+            </button>
+          </div>
+  
+          <!-- Email -->
+          <label class="small fw-semibold">Email Address</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input formControlName="lemail" type="email" class="form-control" placeholder="name@gmail.com">
+          </div>
+             @if(loginform.get('lemail')?.invalid && loginform.get('lemail')?.touched){
+                <p class="text-danger mt-2"> *Not a valid email</p>
+              }
+  
+          <!-- Password -->
+          <label class="small fw-semibold d-flex justify-content-between">
+            Password <a href="#" class="text-primary small">Forgot password?</a>
+          </label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input formControlName="lpassword" type="password" class="form-control" placeholder="••••••••">
+            <span class="input-group-text"><i class="bi bi-eye"></i></span>
+          </div>
+             @if(loginform.get('lpassword')?.invalid && loginform.get('lpassword')?.touched){
+                <p class="text-danger mt-2"> *Not a valid password</p>
+              }
+  
+          <!-- Sign In -->
+          <button class="btn btn-primary w-100 py-2 mb-3" (click)="userlogin()">
+            Sign In
           </button>
-          <button class="btn btn-light btn-sm" (click)="btnclickreg()">
-            <i class="bi bi-briefcase"></i> Register
-          </button>
-        </div>
-
-        <!-- Email -->
-        <label class="small fw-semibold">Email Address</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-          <input type="email" class="form-control" placeholder="name@gmail.com">
-        </div>
-
-        <!-- Password -->
-        <label class="small fw-semibold d-flex justify-content-between">
-          Password <a href="#" class="text-primary small">Forgot password?</a>
-        </label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-lock"></i></span>
-          <input type="password" class="form-control" placeholder="••••••••">
-          <span class="input-group-text"><i class="bi bi-eye"></i></span>
-        </div>
-
-        <!-- Sign In -->
-        <button class="btn btn-primary w-100 py-2 mb-3">
-          Sign In
-        </button>
-
-        <p class="text-center text-muted small">OR CONTINUE WITH</p>
-
-        <!-- Social -->
-        <div class="d-flex gap-2">
-          <button class="btn btn-outline-secondary w-50">
-            <i class="bi bi-google"></i> Google
-          </button>
-          <button class="btn btn-outline-secondary w-50">
-            <i class="bi bi-linkedin"></i> LinkedIn
-          </button>
-        </div>}
+  
+          <p class="text-center text-muted small">OR CONTINUE WITH</p>
+  
+          <!-- Social -->
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary w-50">
+              <i class="bi bi-google"></i> Google
+            </button>
+            <button class="btn btn-outline-secondary w-50">
+              <i class="bi bi-linkedin"></i> LinkedIn
+            </button>
+          </div>
+        </form>}
     @else{
         
      <form [formGroup]="reqform">
@@ -77,7 +85,7 @@
           <!-- Email -->
           <label class="small fw-semibold">Email Address</label>
            @if(reqform.get('email')?.invalid && reqform.get('email')?.touched){
-                <p class="text-danger mt-2"> *Not a valid userName</p>
+                <p class="text-danger mt-2"> *Not a valid email</p>
               }
           <div class="input-group mb-3">
             <span class="input-group-text"><i class="bi bi-envelope"></i></span>
@@ -86,7 +94,7 @@
             <!-- select box users||retruter -->
           <label class="small fw-semibold">you are here for</label>
              @if(reqform.get('role')?.invalid && reqform.get('role')?.touched){
-                <p class="text-danger mt-2"> *Not a valid userName</p>
+                <p class="text-danger mt-2"> *Not a valid role</p>
               }
           <div class="input-group mb-3">
             <span class="input-group-text"><i class="bi bi-card-checklist"></i></span>
@@ -103,7 +111,7 @@
             Password 
           </label>
              @if(reqform.get('password')?.invalid && reqform.get('password')?.touched){
-                <p class="text-danger mt-2"> *Not a valid userName</p>
+                <p class="text-danger mt-2"> *Not a valid password</p>
               }
           <div class="input-group mb-3">
             <span class="input-group-text"><i class="bi bi-lock"></i></span>
