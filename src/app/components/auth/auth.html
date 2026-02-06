@@ -50,56 +50,72 @@
         </div>}
     @else{
         
-        <h5 class="fw-bold">Register your details </h5>
-        <p class="text-muted small">Ready to start </p>
+     <form [formGroup]="reqform">
+          <h5 class="fw-bold">Register your details </h5>
+          <p class="text-muted small">Ready to start </p>
+  
+          <!-- Role -->
+          <div class="btn-group w-100 my-3">
+            <button class="btn btn-light btn-sm" (click)="btnclicklog()">
+              <i class="bi bi-person-fill"></i> Login
+            </button>
+            <button class="btn btn-primary btn-sm" (click)="btnclickreg()">
+              <i class="bi bi-briefcase"></i> Register
+            </button>
+          </div>
+              <!-- username -->
+          <label class="small fw-semibold"> username</label>
+           @if(reqform.get('username')?.invalid && reqform.get('username')?.touched){
+                <p class="text-danger mt-2"> *Not a valid userName</p>
+              }
+          <div class="input-group mb-3">
+              
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input formControlName="username" type="text" class="form-control" placeholder="User Name">
+          </div>
+  
+          <!-- Email -->
+          <label class="small fw-semibold">Email Address</label>
+           @if(reqform.get('email')?.invalid && reqform.get('email')?.touched){
+                <p class="text-danger mt-2"> *Not a valid userName</p>
+              }
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input formControlName="email" type="email" class="form-control" placeholder="name@gmail.com">
+          </div>
+            <!-- select box users||retruter -->
+          <label class="small fw-semibold">you are here for</label>
+             @if(reqform.get('role')?.invalid && reqform.get('role')?.touched){
+                <p class="text-danger mt-2"> *Not a valid userName</p>
+              }
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-card-checklist"></i></span>
+      <select class="form-control" formControlName="role">
+  <option value="">Select your Role</option>
+  <option value="user">User</option>
+  <option value="recruiter">Recruiter</option>
+</select>
 
-        <!-- Role -->
-        <div class="btn-group w-100 my-3">
-          <button class="btn btn-light btn-sm" (click)="btnclicklog()">
-            <i class="bi bi-person-fill"></i> Login
+          </div>
+  
+          <!-- Password -->
+          <label class="small fw-semibold d-flex justify-content-between">
+            Password 
+          </label>
+             @if(reqform.get('password')?.invalid && reqform.get('password')?.touched){
+                <p class="text-danger mt-2"> *Not a valid userName</p>
+              }
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input formControlName="password" type="password" class="form-control" placeholder="••••••••">
+            <span class="input-group-text"><i class="bi bi-eye"></i></span>
+          </div>
+  
+          <!-- Sign In -->
+          <button class="btn btn-primary w-100 py-2 mb-3" (click)="requser()">
+            Register
           </button>
-          <button class="btn btn-primary btn-sm" (click)="btnclickreg()">
-            <i class="bi bi-briefcase"></i> Register
-          </button>
-        </div>
-            <!-- username -->
-        <label class="small fw-semibold"> username</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-person"></i></span>
-          <input type="text" class="form-control" placeholder="User Name">
-        </div>
-
-        <!-- Email -->
-        <label class="small fw-semibold">Email Address</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-          <input type="email" class="form-control" placeholder="name@gmail.com">
-        </div>
-          <!-- select box users||retruter -->
-        <label class="small fw-semibold">you are here for</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-card-checklist"></i></span>
-         <select class="form-control">
-            <option value="">Select your Role</option>
-            <option value="user">User</option>
-            <option value="recruiter">Recruiter</option>
-         </select>
-        </div>
-
-        <!-- Password -->
-        <label class="small fw-semibold d-flex justify-content-between">
-          Password 
-        </label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="bi bi-lock"></i></span>
-          <input type="password" class="form-control" placeholder="••••••••">
-          <span class="input-group-text"><i class="bi bi-eye"></i></span>
-        </div>
-
-        <!-- Sign In -->
-        <button class="btn btn-primary w-100 py-2 mb-3">
-          Register
-        </button>
+     </form>
 
       
     }
