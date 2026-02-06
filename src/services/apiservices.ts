@@ -42,6 +42,9 @@ jobupddate(id:any,data:any){
 
 }
 
+jobviewusers(){
+  return this.http.get(`${this.baseurl}/jobs`)
+}
 
 // 
 
