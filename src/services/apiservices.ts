@@ -19,4 +19,13 @@ export class Apiservices {
 loginuser(data:any){
   return this.http.get(`${this.baseurl}/users?email=${data}`)
 }
+
+addjob(data:any){
+  return this.http.post(`${this.baseurl}/jobs`,data)
+}
+
+
+
+// 
+
 }

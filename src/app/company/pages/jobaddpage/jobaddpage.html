@@ -3,108 +3,150 @@
 
 <div class="container my-5">
   <div class="row justify-content-center">
-    <div class="col-lg-9">
-
-      <!-- JOB DETAILS -->
-      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-        <h6 class="fw-bold mb-3">Job Details</h6>
-
-        <div class="mb-3">
-          <label class="form-label">Job Title</label>
-          <input type="text" class="form-control" placeholder="e.g. Senior Product Designer">
-        </div>
-
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label">Job Category</label>
-            <select class="form-select">
-              <option>Design</option>
-              <option>Development</option>
-              <option>Marketing</option>
-            </select>
+ 
+      <div class="col-lg-9">
+    <form [formGroup]="jobaddform">
+        <!-- JOB DETAILS -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <h6 class="fw-bold mb-3">Job Details</h6>
+  
+          <div class="mb-3">
+            <label class="form-label">Job Title</label>
+            <input formControlName="title" type="text" class="form-control" placeholder="e.g. Senior Product Designer">
           </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Job Type</label>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-primary active">Full-time</button>
-              <button class="btn btn-outline-secondary">Contract</button>
-              <button class="btn btn-outline-secondary">Remote</button>
+           @if(jobaddform.get('title')?.invalid && jobaddform.get('title')?.touched){
+                <p class="text-danger"> *title required</p>
+              }
+  
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Job Category</label>
+              <select class="form-select" formControlName="category">
+                <option value="">select</option>
+                <option value="Design">Design</option>
+                <option value="Development">Development</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+                @if(jobaddform.get('category')?.invalid && jobaddform.get('category')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h6 class="fw-bold mb-0">Description & Requirements</h6>
-          <button class="btn btn-sm btn-outline-primary">
-            <i class="bi bi-magic"></i> Generate with AI
-          </button>
-        </div>
-
-        <label class="form-label">Job Description</label>
-        <textarea class="form-control mb-3" rows="5"
-          placeholder="Tell candidates about the role and your company..."></textarea>
-
-        <label class="form-label">Key Requirements</label>
-        <textarea class="form-control" rows="3"
-          placeholder="List the must-have skills or experiences..."></textarea>
-      </div>
-
-      <!-- SETTINGS -->
-      <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-        <h6 class="fw-bold mb-3">Settings</h6>
-
-        <div class="row g-3 mb-3">
-          <div class="col-md-6">
-            <label class="form-label">Salary Range (Annual)</label>
-            <div class="d-flex gap-2">
-              <input type="number" class="form-control" placeholder="$ Min">
-              <input type="number" class="form-control" placeholder="$ Max">
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Location</label>
-            <input type="text" class="form-control" placeholder="San Francisco, CA or Remote">
-          </div>
-        </div>
-
-        <div class="row g-3">
-          <div class="col-md-6">
-            <label class="form-label">Application Deadline</label>
-            <input type="date" class="form-control">
-          </div>
-
-          <div class="col-md-6">
-            <label class="form-label">Work Setup</label>
-            <div class="d-flex gap-3 mt-2">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="work">
-                <label class="form-check-label">On-site</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="work">
-                <label class="form-check-label">Hybrid</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="work" checked>
-                <label class="form-check-label">Remote</label>
+            
+  
+            <div class="col-md-6">
+              <label class="form-label ">Job Type</label>
+              <div class="d-flex gap-2">
+                <select class="form-select" formControlName="type">
+                <option value="">select</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Contract">Contract</option>
+                <option value="Remote">Remote</option>
+                  @if(jobaddform.get('type')?.invalid && jobaddform.get('type')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+              </select>
+             
               </div>
             </div>
           </div>
         </div>
+  
+        <!-- DESCRIPTION -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="fw-bold mb-0">Description & Requirements</h6>
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-magic"></i> Generate with AI
+            </button>
+          </div>
+  
+          <label class="form-label">Job Description</label>
+          <textarea class="form-control mb-3" rows="5"
+            placeholder="Tell candidates about the role and your company..." formControlName="description"></textarea>
+            @if(jobaddform.get('description')?.invalid && jobaddform.get('description')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+  
+          <label class="form-label">Key Requirements</label>
+          <textarea class="form-control" rows="3"
+            placeholder="List the must-have skills or experiences..." formControlName="requirements"></textarea>
+             @if(jobaddform.get('requirements')?.invalid && jobaddform.get('requirements')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+      
+        </div>
+       
+  
+        <!-- SETTINGS -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <h6 class="fw-bold mb-3">Settings</h6>
+  
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Salary Range (Annual)</label>
+              <div class="d-flex gap-2">
+                <input type="number" class="form-control" placeholder="$ Min" formControlName="min">
+                @if(jobaddform.get('min')?.invalid && jobaddform.get('min')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+                <input type="number" class="form-control" placeholder="$ Max" formControlName="max">
+              
+                @if(jobaddform.get('max')?.invalid && jobaddform.get('max')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label class="form-label">Location</label>
+              <input type="text" class="form-control" placeholder="San Francisco, CA or Remote" formControlName="location">
+              @if(jobaddform.get('location')?.invalid && jobaddform.get('location')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+          </div>
+  
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Application Deadline</label>
+              <input type="date" class="form-control" formControlName="lastdate">
+              @if(jobaddform.get('lastdate')?.invalid && jobaddform.get('lastdate')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+  
+            <div class="col-md-6">
+              <label class="form-label">Work Setup</label>
+              <div class="d-flex gap-3 mt-2">
+                  <select class="form-select" formControlName="workSetup">
+                <option value="">select</option>
+                <option value="On-site">On-site</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Remote">Remote</option>
+                
+              </select>
+          
+              
+              
+               
+                
+              
+              </div>
+                    @if(jobaddform.get('workSetup')?.invalid && jobaddform.get('workSetup')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+          </div>
+        </div>
+  
+        <!-- ACTIONS -->
+        <div class="d-flex justify-content-end gap-3">
+          <button class="btn btn-light">Cancel</button>
+          <button class="btn btn-primary px-4" (click)="addjob()">Publish Job Posting</button>
+        </div>
+  </form>
       </div>
-
-      <!-- ACTIONS -->
-      <div class="d-flex justify-content-end gap-3">
-        <button class="btn btn-light">Cancel</button>
-        <button class="btn btn-primary px-4">Publish Job Posting</button>
-      </div>
-
-    </div>
+   
   </div>
 </div>
 
