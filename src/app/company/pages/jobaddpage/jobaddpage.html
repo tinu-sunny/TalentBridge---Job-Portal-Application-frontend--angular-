@@ -1,7 +1,174 @@
 <app-header></app-header>
 
 
-<div class="container my-5">
+@if(editid){<div class="container my-5">
+  <div class="row justify-content-center">
+ 
+    
+      <div class="col-lg-9">
+        
+    <form [formGroup]="jobaddformedit">
+      
+        <!-- JOB DETAILS -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <h6 class="fw-bold mb-3">Job Details Edit</h6>
+  
+          <div class="mb-3">
+            <label class="form-label">Job Title</label>
+            <input  formControlName="title" type="text" class="form-control" placeholder="e.g. Senior Product Designer">
+          </div>
+           @if(jobaddformedit.get('title')?.invalid && jobaddformedit.get('title')?.touched){
+                <p class="text-danger"> *title required</p>
+              }
+  
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Job Category</label>
+              <select class="form-select" formControlName="category">
+                <option value="">select</option>
+                <option value="Design">Design</option>
+                <option value="Development">Development</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+                @if(jobaddformedit.get('category')?.invalid && jobaddformedit.get('category')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+            
+  
+            <div class="col-md-6">
+              <label class="form-label ">Job Type</label>
+              <div class="d-flex gap-2">
+                <select class="form-select" formControlName="type">
+                <option value="">select</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Contract">Contract</option>
+                <option value="Remote">Remote</option>
+                  @if(jobaddformedit.get('type')?.invalid && jobaddformedit.get('type')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+              </select>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- DESCRIPTION -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="fw-bold mb-0">Description & Requirements</h6>
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-magic"></i> Generate with AI
+            </button>
+          </div>
+  
+          <label class="form-label">Job Description</label>
+          <textarea class="form-control mb-3" rows="5"
+            placeholder="Tell candidates about the role and your company..." formControlName="description"></textarea>
+            @if(jobaddformedit.get('description')?.invalid && jobaddformedit.get('description')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+  
+          <label class="form-label">Key Requirements</label>
+          <textarea class="form-control" rows="3"
+            placeholder="List the must-have skills or experiences..." formControlName="requirements"></textarea>
+             @if(jobaddformedit.get('requirements')?.invalid && jobaddformedit.get('requirements')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+      
+        </div>
+       
+  
+        <!-- SETTINGS -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+          <h6 class="fw-bold mb-3">Settings</h6>
+  
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Salary Range (Annual)</label>
+              <div class="d-flex gap-2">
+                <input type="number" class="form-control" placeholder="$ Min" formControlName="min">
+                @if(jobaddformedit.get('min')?.invalid && jobaddformedit.get('min')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+                <input type="number" class="form-control" placeholder="$ Max" formControlName="max">
+              
+                @if(jobaddformedit.get('max')?.invalid && jobaddformedit.get('max')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+              </div>
+            </div>
+  
+            <div class="col-md-6">
+              <label class="form-label">Location</label>
+              <input type="text" class="form-control" placeholder="San Francisco, CA or Remote" formControlName="location">
+              @if(jobaddformedit.get('location')?.invalid && jobaddformedit.get('location')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+          </div>
+  
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Application Deadline</label>
+              <input type="date" class="form-control" formControlName="lastdate">
+              @if(jobaddformedit.get('lastdate')?.invalid && jobaddformedit.get('lastdate')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+  
+            <div class="col-md-6">
+              <label class="form-label">Work Setup</label>
+              <div class="d-flex gap-3 mt-2">
+                  <select class="form-select" formControlName="workSetup">
+                <option value="">select</option>
+                <option value="On-site">On-site</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Remote">Remote</option>
+                
+              </select>
+          
+              
+              
+               
+                
+              
+              </div>
+                    @if(jobaddformedit.get('workSetup')?.invalid && jobaddformedit.get('workSetup')?.touched){
+                <p class="text-danger"> *job Category required</p>
+              }
+            </div>
+          </div>
+        </div>
+  
+        <!-- ACTIONS -->
+        <div class="d-flex justify-content-end gap-3">
+          <button class="btn btn-light">Cancel</button>
+          <button class="btn btn-primary px-4" (click)="editjob()">Publish Job Posting</button>
+        </div>
+  </form>
+      </div>
+   
+  </div>
+</div>}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@else {
+  <div class="container my-5">
   <div class="row justify-content-center">
  
       <div class="col-lg-9">
@@ -149,5 +316,6 @@
    
   </div>
 </div>
+}
 
 <app-footer></app-footer>

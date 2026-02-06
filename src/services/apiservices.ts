@@ -24,6 +24,23 @@ addjob(data:any){
   return this.http.post(`${this.baseurl}/jobs`,data)
 }
 
+jobviewcomapny(){
+  return this.http.get(`${this.baseurl}/jobs`)
+}
+
+jobdelete(id:any){
+  return this.http.delete(`${this.baseurl}/jobs/${id}`)
+}
+
+jobdataID(id:any){
+    return this.http.get(`${this.baseurl}/jobs/${id}`)
+
+}
+
+jobupddate(id:any,data:any){
+    return this.http.patch(`${this.baseurl}/jobs/${id}`,data)
+
+}
 
 
 // 
