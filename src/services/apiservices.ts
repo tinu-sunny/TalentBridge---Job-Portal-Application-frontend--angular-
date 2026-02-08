@@ -46,6 +46,11 @@ jobviewusers(){
   return this.http.get(`${this.baseurl}/jobs`)
 }
 
+jobviewbyid(id:any){
+    return this.http.get(`${this.baseurl}/jobs/${id}`)
+
+}
+
 // 
 
 }

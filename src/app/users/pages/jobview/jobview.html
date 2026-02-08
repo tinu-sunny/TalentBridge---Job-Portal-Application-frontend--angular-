@@ -12,12 +12,12 @@
           <div class="d-flex gap-3">
            
             <div>
-              <h4 class="fw-bold mb-1">Senior Software Engineer</h4>
+              <h4 class="fw-bold mb-1">{{jobdata.title}}</h4>
               <small class="text-muted">
-                Google · Mountain View, CA · Full-time
+                {{jobdata.location}} ({{jobdata.workSetup}})
               </small>
               <p class="fw-semibold text-primary mt-1">
-                $180,000 – $260,000 / year
+               {{jobdata.min}}-{{jobdata.max}}
               </p>
             </div>
           </div>
@@ -41,34 +41,14 @@
       </ul>
 
       <!-- RESPONSIBILITIES -->
-      <h6 class="fw-bold">Job Responsibilities</h6>
-      <ul class="list-unstyled">
-        <li class="mb-2">
-          <i class="bi bi-check-circle-fill text-primary"></i>
-          Design and implement large-scale distributed systems.
-        </li>
-        <li class="mb-2">
-          <i class="bi bi-check-circle-fill text-primary"></i>
-          Collaborate with cross-functional teams.
-        </li>
-        <li class="mb-2">
-          <i class="bi bi-check-circle-fill text-primary"></i>
-          Optimize performance, scalability, and security.
-        </li>
-        <li class="mb-3">
-          <i class="bi bi-check-circle-fill text-primary"></i>
-          Mentor junior engineers and lead initiatives.
-        </li>
-      </ul>
+      <h6 class="fw-bold">Job Description</h6>
+     <p>{{jobdata.
+description
+}}</p>
 
       <!-- REQUIREMENTS -->
       <h6 class="fw-bold">Requirements</h6>
-      <ul>
-        <li>BS degree in Computer Science or equivalent.</li>
-        <li>8+ years of software development experience.</li>
-        <li>Experience with distributed systems and cloud.</li>
-        <li>Strong understanding of SDLC and best practices.</li>
-      </ul>
+     <p>{{jobdata.requirements}}</p>
 
       <!-- BENEFITS -->
       <h6 class="fw-bold mt-4">Benefits</h6>
@@ -105,7 +85,7 @@
     <div class="col-lg-4">
 
       <!-- ABOUT COMPANY -->
-      <div class="card p-4 mb-4">
+      <!-- <div class="card p-4 mb-4">
         <h6 class="fw-bold">About Google</h6>
         <p class="small text-muted">
           Google's mission is to organize the world's information and make it universally accessible.
@@ -125,16 +105,14 @@
         <button class="btn btn-outline-primary w-100">
           View Company Profile
         </button>
-      </div>
+      </div> -->
 
   
 
       <!-- LOCATION -->
-      <div class="card p-3 h-50 mt-5">
+      <div class="card p-3 h-50 ">
         <h6 class="fw-bold">Location</h6>
-        <small class="text-muted">
-          1600 Amphitheatre Parkway, Mountain View, CA 94043
-        </small>
+   <div >    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15767.187973962065!2d76.837499!3d8.89845705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1770529955725!5m2!1sen!2sin" width="380" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
 
     </div>

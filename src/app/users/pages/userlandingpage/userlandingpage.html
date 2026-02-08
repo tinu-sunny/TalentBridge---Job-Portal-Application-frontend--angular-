@@ -58,7 +58,7 @@
 
       <!-- JOB CARD -->
        @for (item of jobs; track $index) {
-          <a id="path" href="users/job-view/5 ">
+          <a id="path" (click)="applyjob(item.id)" >
           <div class="card p-4 mb-3">
             <div class="d-flex justify-content-between gap-4">
               <div class="d-flex flex-column gap-2">

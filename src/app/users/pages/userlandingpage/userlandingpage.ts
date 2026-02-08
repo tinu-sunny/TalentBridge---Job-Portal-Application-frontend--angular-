@@ -2,17 +2,22 @@ import { Component } from '@angular/core';
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
 import { Apiservices } from '../../../../services/apiservices';
+import { CompanyRoutingModule } from "../../../company/company-routing-module";
+import { Router } from '@angular/router';
+// import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-userlandingpage',
-  imports: [Header, Footer],
+  imports: [Header, Footer, CompanyRoutingModule],
   templateUrl: './userlandingpage.html',
   styleUrl: './userlandingpage.css',
 })
 export class Userlandingpage {
 
 
-constructor(private api:Apiservices){}
+constructor(private api:Apiservices,
+  private route:Router
+){}
 
 jobs:any=''
 
@@ -37,6 +42,13 @@ jobs:any=''
       }
     })
 
+  }
+
+
+  applyjob(jobid:any){
+
+ this.route.navigateByUrl(`/users/job-view/${jobid}`)
+  
   }
 
 }
