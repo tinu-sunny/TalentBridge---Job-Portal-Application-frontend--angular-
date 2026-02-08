@@ -88,6 +88,11 @@ if(this.loginform.valid){
 if(res.length > 0){
       if(res[0].password==this.loginform.value.lpassword){
         alert("login")
+        
+        const useremail = res[0].email
+
+        sessionStorage.setItem('loginuser',useremail)
+
         if(res[0].role=='user'){
  this.route.navigateByUrl('/users')
         }

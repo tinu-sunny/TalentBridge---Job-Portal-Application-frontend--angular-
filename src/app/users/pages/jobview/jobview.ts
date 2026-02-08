@@ -44,4 +44,32 @@ jobviewbyid(){
     }
   })
 }
+
+savejob(){
+  alert('job  saved ')
+}
+
+applyjob(){
+
+// appllyed user email
+ const user = sessionStorage.getItem("loginuser");
+ const data = {useremail:user,jobid:this.jobdata.id,status:1}
+ this.api.jobapplied(data).subscribe({
+  next:(res:any)=>{
+    console.log(res);
+  alert("applyed for this job")
+    
+  },
+
+  error:(err)=>{
+    console.log(err);
+    
+  }
+ })
+
+}
+
+
+
+
 }

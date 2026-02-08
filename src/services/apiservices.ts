@@ -51,6 +51,10 @@ jobviewbyid(id:any){
 
 }
 
+jobapplied(data:any){
+  return this.http.post(`${this.baseurl}/application`,data)
+}
+
 // 
 
 }
