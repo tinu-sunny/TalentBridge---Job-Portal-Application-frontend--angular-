@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class Apiservices {
 
-  baseurl:string=' http://localhost:3000'
+  // baseurl:string=' http://localhost:3000' 
+  baseurl:string='https://talentbridge-job-portal-application.onrender.com'
   constructor(private http:HttpClient){}
   
 
