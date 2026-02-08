@@ -1,65 +1,81 @@
-<nav class="navbar navbar-expand-lg bg-white border-bottom px-4">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <div class="container">
 
-    <!-- LOGO -->
+    <!-- ✅ LOGO -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
       <i class="bi bi-link-45deg fs-4 text-primary"></i>
       TalentBridge
     </a>
 
-    <!-- SEARCH BAR -->
-    <form class="d-none d-lg-flex mx-4 flex-grow-1" role="search">
-      <div class="input-group">
-        <span class="input-group-text bg-light border-0">
-          <i class="bi bi-search"></i>
-        </span>
+    <!-- ✅ MOBILE TOGGLER -->
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- ✅ NAV CONTENT -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <!-- SEARCH (Desktop Centered) -->
+      <form class="d-none d-lg-flex mx-auto w-50" role="search">
+        <div class="input-group">
+          <span class="input-group-text bg-light border-0">
+            <i class="bi bi-search"></i>
+          </span>
+
+          <input
+            class="form-control bg-light border-0"
+            type="search"
+            placeholder="Search jobs, skills, companies">
+        </div>
+      </form>
+
+
+      <!-- ✅ MOBILE SEARCH -->
+      <form class="d-lg-none my-3" role="search">
         <input
-          class="form-control bg-light border-0"
+          class="form-control"
           type="search"
-          placeholder="Search jobs, skills, or companies"
-        />
-      </div>
-    </form>
+          placeholder="Search jobs...">
+      </form>
 
-    <!-- NAV LINKS -->
-    <ul class="navbar-nav ms-auto align-items-center gap-4">
 
-      <li class="nav-item">
-        <a class="nav-link fw-semibold text-primary border-bottom border-2 border-primary" href="#">
-          Jobs
-        </a>
-      </li>
+      <!-- NAV LINKS -->
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
-      <li class="nav-item">
-        <a class="nav-link fw-semibold text-muted" href="#">Messages</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold text-primary border-bottom border-2 border-primary">
+            Jobs
+          </a>
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link fw-semibold text-muted" href="#">Applications</a>
-      </li>
+        <!-- Notification -->
+        <li class="nav-item">
+          <button class="btn position-relative">
+            <i class="bi bi-bell fs-5"></i>
 
-      <li class="nav-item">
-        <a class="nav-link fw-semibold text-muted" href="#">Companies</a>
-      </li>
+            <!-- Notification dot -->
+            <span class="position-absolute top-0 start-100 translate-middle 
+                         badge rounded-pill bg-danger"
+                  style="font-size:10px;">
+            </span>
+          </button>
+        </li>
 
-      <!-- NOTIFICATION -->
-      <li class="nav-item">
-        <button class="btn position-relative">
-          <i class="bi bi-bell fs-5"></i>
-        </button>
-      </li>
+        <!-- Profile -->
+        <li class="nav-item">
+          <img
+            src="https://i.pravatar.cc/40"
+            class="rounded-circle"
+            width="38"
+            height="38"
+            style="object-fit: cover; cursor:pointer;">
+        </li>
 
-      <!-- PROFILE -->
-      <li class="nav-item">
-        <img
-          src="https://i.pravatar.cc/40"
-          class="rounded-circle"
-          width="36"
-          height="36"
-          style="object-fit: cover;"
-        />
-      </li>
-    </ul>
+      </ul>
 
+    </div>
   </div>
 </nav>

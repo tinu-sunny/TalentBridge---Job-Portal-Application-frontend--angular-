@@ -1,50 +1,65 @@
 <app-header></app-header>
 
-<section class="" style="margin-top: -100px;">
-  <div class="row align-items-center min-vh-100 px-5 justify-content-between">
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center min-vh-100 gy-5">
 
-    <!-- LEFT CONTENT -->
-    <div class="col-lg-6 mb-5 mb-lg-0">
+      <!-- LEFT CONTENT -->
+      <div class="col-12 col-lg-6 text-center text-lg-start">
 
-      <span class="badge bg-primary-subtle text-primary mb-3">
-        <i class="bi bi-lightning-charge-fill"></i> FUTURE OF RECRUITMENT
-      </span>
+        <span class="badge bg-primary-subtle text-primary mb-3">
+          <i class="bi bi-lightning-charge-fill"></i> FUTURE OF RECRUITMENT
+        </span>
 
-      <h1 class="fw-bold display-5 mt-3">
-        Connecting Top <br />
-        Talent with <span class="text-primary">Great Companies.</span>
-      </h1>
+        <h1 class="fw-bold display-5 mt-3">
+          Connecting Top <br class="d-none d-lg-block"/>
+          Talent with <span class="text-primary">Great Companies.</span>
+        </h1>
 
-      <p class="text-muted mt-3 w-75">
-        Whether you're looking to hire the best industry experts or land your
-        dream career path, TalentBridge is your bridge to global opportunities.
-      </p>
+        <p class="text-muted mt-3">
+          Whether you're looking to hire the best industry experts or land your
+          dream career path, TalentBridge is your bridge to global opportunities.
+        </p>
 
-      <div class="d-flex gap-3 mt-4">
-        <button class="btn btn-primary px-4">
-          Find a Job <i class="bi bi-arrow-right"></i>
-        </button>
-        <button class="btn btn-outline-primary px-4">
-          Post a Job
-        </button>
+        <div class="d-flex flex-column flex-sm-row gap-3 mt-4 justify-content-center justify-content-lg-start">
+          <button class="btn btn-primary px-4">
+            Find a Job <i class="bi bi-arrow-right"></i>
+          </button>
+          <button class="btn btn-outline-primary px-4">
+            Post a Job
+          </button>
+        </div>
+
+        <p class="text-muted mt-5 small">TRUSTED BY INDUSTRY LEADERS</p>
+
+        <!-- Logos -->
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+          
+          <div class="bg-secondary-subtle rounded p-2">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a1a934149082851.Y3JvcCwzNDUxLDI3MDAsNzYsMA.jpg"
+              alt="tcs" class="img-fluid" style="max-height:40px;">
+          </div>
+
+          <div class="bg-secondary-subtle rounded p-2">
+            <img src="https://www.liblogo.com/img-logo/in6145i7cd-infosys-logo-infosys-logo-ai-openchain.png"
+              alt="infosys" class="img-fluid" style="max-height:40px;">
+          </div>
+
+          <div class="bg-secondary-subtle rounded p-2">
+            <img src="https://1000logos.net/wp-content/uploads/2017/02/IBM-Logo-1967.jpg"
+              alt="IBM" class="img-fluid" style="max-height:40px;">
+          </div>
+
+        </div>
+
       </div>
 
-      <p class="text-muted mt-5 small">TRUSTED BY INDUSTRY LEADERS</p>
-      <div class="d-flex gap-3">
-        <div class="bg-secondary-subtle rounded" style="width:70px;height:40px;"><img src="https://mir-s3-cdn-cf.behance.net/projects/404/a1a934149082851.Y3JvcCwzNDUxLDI3MDAsNzYsMA.jpg" alt="tcs" width="70px" height="40px"></div>
-         <div class="bg-secondary-subtle rounded" style="width:70px;height:40px;"><img src="https://www.liblogo.com/img-logo/in6145i7cd-infosys-logo-infosys-logo-ai-openchain.png" alt="infoys" width="70px" height="40px"></div>
-          <div class="bg-secondary-subtle rounded" style="width:70px;height:40px;"><img src="https://1000logos.net/wp-content/uploads/2017/02/IBM-Logo-1967.jpg" alt="IBM" width="70px" height="40px"></div>
-       
-       
+      <!-- RIGHT AUTH CARD -->
+      <div class="col-12 col-md-8 col-lg-4 mx-auto">
+        <app-auth></app-auth>
       </div>
 
     </div>
-
-    <!-- RIGHT AUTH CARD -->
-    <div class="col-lg-4">
-      <app-auth></app-auth>
-    </div>
-
   </div>
 </section>
 

@@ -1,38 +1,47 @@
 <app-header></app-header>
 
-
-<div class=" container w-100  mt-5">
-    <table class="table table-striped ">
-<thead>
-    <tr>
-        <th>Job Tittle</th>
-        <th>Canditade Email</th>
-        <th>Canditade CV</th>
+<div class="container w-100 mt-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Candidate Email</th>
+        <th>Candidate CV</th>
         <th>Action</th>
-    </tr>
-</thead>
+      </tr>
+    </thead>
 
-<tbody>
-   @for (item of jobdata; track $index){ <tr>
-        <td>title</td>
+    <tbody>
+      @for (item of jobdata; track item.id){
+      <tr>
+        <td>{{item.title}}</td>
         <td>{{item.useremail}}</td>
-        <td><img src="" alt="useer_cv"></td>
-        <td><div class="d-flex gap-3">
-           @if(item.status==1){ <button (click)="approve(item.id)" class="btn btn-md btn-outline-success">✅</button><button (click)="rejected(item.id)" class="btn btn-md btn-outline-danger">❌</button>}
-           @else if (item.status==2) {
-            <p class="btn  btn-outline-success">Accpeted</p>
-           }
-           @else if(item.status==3){
-            <p class="btn btn-outline-danger">Rejected</p>
-           }
-        </div></td>
-    </tr>}
-</tbody>
+        <td>
+          <img [src]="'http://localhost:3000/' + item.cv" width="80">
+        </td>
 
-    </table>
+        <td>
+          <div class="d-flex gap-3">
+
+            @if(item.status == 1){
+              <button (click)="approve(item.id)" class="btn btn-outline-success">✅</button>
+              <button (click)="rejected(item.id)" class="btn btn-outline-danger">❌</button>
+            }
+
+            @if(item.status == 2){
+              <span class="btn btn-outline-success">Accepted</span>
+            }
+
+            @if(item.status == 3){
+              <span class="btn btn-outline-danger">Rejected</span>
+            }
+
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </div>
-
-
-
 
 <app-footer></app-footer>
