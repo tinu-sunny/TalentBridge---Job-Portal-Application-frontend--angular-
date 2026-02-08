@@ -55,6 +55,22 @@ jobapplied(data:any){
   return this.http.post(`${this.baseurl}/application`,data)
 }
 
+
+allaplictioncompanyview(){
+  return this.http.get(`${this.baseurl}/application`)
+}
+
+// update application status
+
+updateApplicationStatus(itemid:any,data:any){
+  return this.http.patch(`${this.baseurl}/application/${itemid}`,data)
+}
+
+
+
+
+
+
 // 
 
 }
